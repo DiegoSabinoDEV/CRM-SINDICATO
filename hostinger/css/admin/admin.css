@@ -171,6 +171,15 @@ body {
 .logo-area h1 { font-size: 28px; color: var(--primary); margin-bottom: 5px; }
 .logo-area p { color: var(--muted); font-size: 14px; }
 
+.login-logo {
+  max-width: 200px;
+  max-height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 16px auto;
+  border-radius: 8px;
+}
+
 .btn-login {
   width: 100%;
   padding: 12px 16px;

@@ -1,4 +1,4 @@
-import { jsPDF, GState } from 'https://cdn.jsdelivr.net/npm/jspdf/+esm'
+import { jsPDF, GState } from 'https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.es.min.js'
 
 const COR_VERMELHO    = [204, 0, 0]
 const COR_PRETO       = [26, 26, 26]
@@ -20,7 +20,8 @@ async function carregarLogoBase64(url) {
       reader.onloadend = () => resolve(reader.result)
       reader.readAsDataURL(blob)
     })
-  } catch {
+  } catch (e) {
+    console.error('[pdf.js] Falha ao carregar logo:', url, e)
     return null
   }
 }
@@ -30,21 +31,28 @@ async function adicionarMarcaDagua(doc, logoBase64) {
   const pageWidth  = doc.internal.pageSize.getWidth()
   const pageHeight = doc.internal.pageSize.getHeight()
 
-  doc.saveGraphicsState()
+  try { doc.saveGraphicsState() } catch (e) { console.error('[pdf.js] saveGraphicsState:', e) }
+
   try {
-    if (typeof GState !== 'undefined') {
+    if (typeof GState !== 'undefined' && GState) {
       doc.setGState(new GState({ opacity: 0.10 }))
     }
-  } catch {}
+  } catch (e) {
+    console.error('[pdf.js] GState opacity falhou:', e)
+  }
 
   const imgW = 80
   const imgH = 40
   const x = (pageWidth  - imgW) / 2
   const y = (pageHeight - imgH) / 2
 
-  try { doc.addImage(logoBase64, 'JPEG', x, y, imgW, imgH) } catch {}
+  try {
+    doc.addImage(logoBase64, 'JPEG', x, y, imgW, imgH)
+  } catch (e) {
+    console.error('[pdf.js] addImage marcaDagua falhou:', e)
+  }
 
-  doc.restoreGraphicsState()
+  try { doc.restoreGraphicsState() } catch (e) { console.error('[pdf.js] restoreGraphicsState:', e) }
 }
 
 function valor(value, fallback = '-') {
@@ -83,7 +91,11 @@ export async function gerarPDF(dados = {}) {
   const assinadoEm = dados.assinadoEm || geradoEm
 
   // ── MARCA D'ÁGUA (antes do conteúdo) ──────────────────────────────────────
-  await adicionarMarcaDagua(doc, logoMarca)
+  try {
+    await adicionarMarcaDagua(doc, logoMarca)
+  } catch (e) {
+    console.error('[pdf.js] Marca d\'água abortou:', e)
+  }
 
   // ── CABEÇALHO ──────────────────────────────────────────────────────────────
   const alturaHeader = 28
@@ -92,7 +104,7 @@ export async function gerarPDF(dados = {}) {
   doc.rect(0, 0, largura, alturaHeader, 'F')
 
   if (logoIcone) {
-    try { doc.addImage(logoIcone, 'JPEG', margemX, 5, 18, 18) } catch {}
+    try { doc.addImage(logoIcone, 'JPEG', margemX, 5, 18, 18) } catch (e) { console.error('[pdf.js] addImage header:', e) }
   }
 
   const xTexto = logoIcone ? margemX + 22 : margemX
@@ -253,7 +265,8 @@ export async function gerarPDF(dados = {}) {
     try {
       doc.addImage(dados.assinaturaDataUrl, 'PNG', margemX, y, 75, 25)
       y += 28
-    } catch {
+    } catch (e) {
+      console.error('[pdf.js] addImage assinatura:', e)
       doc.setFont('helvetica', 'normal')
       doc.setFontSize(8)
       doc.setTextColor(...COR_MUTED)
