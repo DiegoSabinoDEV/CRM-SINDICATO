@@ -147,6 +147,11 @@ a {
   max-width: 240px;
 }
 
+.brand-name,
+.brand-subtitle {
+  display: none;
+}
+
 .topbar-links {
   display: inline-flex;
   align-items: center;
@@ -904,11 +909,6 @@ button:hover {
     margin-bottom: 4px;
   }
 
-  .brand-name,
-  .brand-subtitle {
-    display: none;
-  }
-
   .brand-mark {
     width: 56px;
     height: 56px;
@@ -999,6 +999,46 @@ button:hover {
   .footer-dev-link {
     display: block;
     text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .topbar {
+    padding: 12px 32px;
+  }
+
+  .topbar.scrolled {
+    padding: 6px 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Logo via img — container segue o tamanho da imagem */
+  .brand-mark {
+    width: auto;
+    height: auto;
+  }
+
+  .brand-mark img {
+    width: auto;
+    height: auto;
+    max-height: 80px;
+    transition: max-height 0.3s ease;
+  }
+
+  .topbar.scrolled .brand-mark {
+    width: auto;
+    height: auto;
+  }
+
+  .topbar.scrolled .brand-mark img {
+    max-height: 44px;
+  }
+
+  /* Botões visíveis no desktop mesmo ao rolar */
+  .topbar.scrolled .topbar-links {
+    max-height: 200px !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
 }
 
