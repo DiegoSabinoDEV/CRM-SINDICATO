@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filiação Sindical Digital — SINTEENPPB-PB</title>
+  <meta name="description" content="Filiação digital SINTEENPPB-PB — Sindicato dos Trabalhadores em Empresas de Energia Elétrica">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1a1a1a">
+  <link rel="icon" type="image/jpeg" href="/logo/faviSinteenp.jpeg">
+  <link rel="stylesheet" href="/css/filiacao.css">
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="Página inicial da filiação sindical digital">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="./logo/logoSinteenp.jpeg" alt="">
+        </span>
+        <span class="brand-copy">
+          <span>SINTEENP</span>
+          <small>Sindicato dos Trabalhadores em Estabelecimentos de Ensino Privado da Paraíba</small>
+        </span>
+      </a>
+
+      <nav class="topbar-links" aria-label="Links úteis">
+        <a class="topbar-link" href="#formulario">Ir para o formulário</a>
+        <a class="topbar-link" href="./beneficios.html">Nossos benefícios →</a>
+        <a class="topbar-link" href="./privacidade.html">Política de Privacidade</a>
+      </nav>
+    </header>
+
+    <main class="hero-layout">
+      <section class="hero-panel" aria-labelledby="hero-title">
+        <div class="hero-badges">
+          <span class="badge">Fluxo 100% digital</span>
+          <span class="badge">LGPD e consentimento registrado</span>
+          <span class="badge">Análise interna após envio</span>
+        </div>
+
+        <h1 id="hero-title">Sua filiação começa aqui, com envio seguro e assinatura digital.</h1>
+        <p>Preencha seus dados, envie o contracheque e assine a ficha no próprio navegador. O cadastro é registrado como pendente para análise do sindicato, sem etapas externas e sem burocracia manual.</p>
+
+        <div class="hero-stats" aria-label="Destaques do processo">
+          <div class="stat-card">
+            <strong>1 envio</strong>
+            <span>Dados, contracheque e ficha reunidos no mesmo fluxo</span>
+          </div>
+          <div class="stat-card">
+            <strong>PDF gerado</strong>
+            <span>Ficha produzida automaticamente com assinatura visível</span>
+          </div>
+          <div class="stat-card">
+            <strong>Storage privado</strong>
+            <span>Arquivos protegidos e acessíveis apenas no CRM autenticado</span>
+          </div>
+        </div>
+
+        <ul class="hero-list">
+          <li>
+            <span class="hero-list-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 6h8"></path>
+                <path d="M8 12h8"></path>
+                <path d="M8 18h5"></path>
+                <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path>
+              </svg>
+            </span>
+            <div>
+              <strong>Cadastro completo em uma única página</strong>
+              <span>Dados pessoais, contato, endereço, vínculo profissional, pagamento, contracheque e consentimento LGPD.</span>
+            </div>
+          </li>
+          <li>
+            <span class="hero-list-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21s-6-4.35-6-10V5l6-2 6 2v6c0 5.65-6 10-6 10z"></path>
+                <path d="M9.5 11.5l1.8 1.8 3.2-3.6"></path>
+              </svg>
+            </span>
+            <div>
+              <strong>Consentimento com data e IP</strong>
+              <span>O envio registra evidências mínimas do aceite da política de privacidade, conforme o fluxo definido para a plataforma.</span>
+            </div>
+          </li>
+          <li>
+            <span class="hero-list-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 7h16"></path>
+                <path d="M4 12h10"></path>
+                <path d="M4 17h7"></path>
+                <path d="M18 15l2 2 4-4"></path>
+              </svg>
+            </span>
+            <div>
+              <strong>Revisão posterior pelo sindicato</strong>
+              <span>Seu pedido é recebido com status pendente e segue para avaliação interna antes de aprovação ou recusa.</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="hero-note">
+          O contracheque e exigido apenas para pagamento em sede. Nessa modalidade, o vencimento e fixado para o dia 5 de cada mês.
+        </div>
+      </section>
+
+      <section class="form-panel" id="formulario" aria-labelledby="form-title">
+        <div class="form-head">
+          <div class="eyebrow">Ficha digital de filiação</div>
+          <h2 id="form-title">Preencha os dados para solicitar sua filiação</h2>
+          <p>Campos marcados com <span class="required-mark">*</span> são obrigatórios. Seus dados são usados exclusivamente para fins de filiação sindical e análise do cadastro.</p>
+        </div>
+
+        <form id="filiacao-form" novalidate>
+          <div id="form-message" class="message error" role="alert" aria-live="assertive"></div>
+
+          <section class="section-card" aria-labelledby="sec-pessoais">
+            <h3 id="sec-pessoais">Dados pessoais</h3>
+            <p>Informe os dados principais do titular da solicitação.</p>
+            <div class="grid two">
+              <div class="field full">
+                <label for="nome_completo">Nome completo <span class="required-mark">*</span></label>
+                <input id="nome_completo" name="nome_completo" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="cpf">CPF <span class="required-mark">*</span></label>
+                <input id="cpf" name="cpf" type="text" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" required>
+              </div>
+              <div class="field">
+                <label for="rg">RG</label>
+                <input id="rg" name="rg" type="text">
+              </div>
+              <div class="field">
+                <label for="data_nascimento">Data de nascimento</label>
+                <input id="data_nascimento" name="data_nascimento" type="date">
+              </div>
+              <div class="field">
+                <label for="sexo">Sexo</label>
+                <select id="sexo" name="sexo">
+                  <option value="">Selecione</option>
+                  <option value="M">Masculino</option>
+                  <option value="F">Feminino</option>
+                  <option value="O">Outro</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="estado_civil">Estado civil</label>
+                <select id="estado_civil" name="estado_civil">
+                  <option value="">Selecione</option>
+                  <option value="Solteiro(a)">Solteiro(a)</option>
+                  <option value="Casado(a)">Casado(a)</option>
+                  <option value="União estável">União estável</option>
+                  <option value="Divorciado(a)">Divorciado(a)</option>
+                  <option value="Viúvo(a)">Viúvo(a)</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-card" aria-labelledby="sec-contato">
+            <h3 id="sec-contato">Contato</h3>
+            <p>Use um WhatsApp válido para facilitar o retorno sobre a análise do cadastro.</p>
+            <div class="grid two">
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="telefone">Telefone</label>
+                <input id="telefone" name="telefone" type="text" inputmode="tel" placeholder="(00) 0000-0000">
+              </div>
+              <div class="field full">
+                <label for="whatsapp">WhatsApp <span class="required-mark">*</span></label>
+                <input id="whatsapp" name="whatsapp" type="text" inputmode="tel" placeholder="(00) 00000-0000" required>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-card" aria-labelledby="sec-endereco">
+            <h3 id="sec-endereco">Endereço</h3>
+            <p>Ao digitar o CEP completo, o sistema busca automaticamente os dados principais do endereço.</p>
+            <div class="grid three">
+              <div class="field">
+                <label for="cep">CEP</label>
+                <div class="field-row">
+                  <input id="cep" name="cep" type="text" inputmode="numeric" maxlength="9" placeholder="00000-000">
+                </div>
+                <span id="cep-status" class="hint" aria-live="polite"></span>
+              </div>
+              <div class="field full">
+                <label for="logradouro">Logradouro</label>
+                <input id="logradouro" name="logradouro" type="text" autocomplete="street-address">
+              </div>
+              <div class="field">
+                <label for="numero">Número</label>
+                <input id="numero" name="numero" type="text">
+              </div>
+              <div class="field">
+                <label for="complemento">Complemento</label>
+                <input id="complemento" name="complemento" type="text">
+              </div>
+              <div class="field">
+                <label for="bairro">Bairro</label>
+                <input id="bairro" name="bairro" type="text">
+              </div>
+              <div class="field">
+                <label for="cidade">Cidade</label>
+                <input id="cidade" name="cidade" type="text">
+              </div>
+              <div class="field">
+                <label for="estado">UF</label>
+                <input id="estado" name="estado" type="text" maxlength="2" placeholder="UF">
+              </div>
+            </div>
+          </section>
+
+          <section class="section-card" aria-labelledby="sec-profissionais">
+            <h3 id="sec-profissionais">Dados profissionais</h3>
+            <p>Essas informações ajudam na identificação interna do vínculo do trabalhador.</p>
+            <div class="grid two">
+              <div class="field full">
+                <label for="empresa">Empresa</label>
+                <input id="empresa" name="empresa" type="text">
+              </div>
+              <div class="field">
+                <label for="cargo">Cargo</label>
+                <input id="cargo" name="cargo" type="text">
+              </div>
+              <div class="field">
+                <label for="ctps_numero">Numero da CTPS</label>
+                <input id="ctps_numero" name="ctps_numero" type="text">
+              </div>
+              <div class="field">
+                <label for="data_admissao">Data de admissão</label>
+                <input id="data_admissao" name="data_admissao" type="date">
+              </div>
+            </div>
+          </section>
+
+          <section class="section-card" aria-labelledby="sec-pagamento">
+            <h3 id="sec-pagamento">Forma de pagamento</h3>
+            <p>Escolha como a mensalidade sindical será tratada no cadastro.</p>
+            <div class="radio-grid" role="radiogroup" aria-labelledby="sec-pagamento">
+              <label class="radio-card" for="forma_folha">
+                <input id="forma_folha" name="forma_pagamento" type="radio" value="folha" required>
+                <span class="radio-copy">
+                  <strong>Desconto em folha</strong>
+                  <span>Opção padrão para desconto da mensalidade diretamente em folha de pagamento.</span>
+                </span>
+              </label>
+              <label class="radio-card" for="forma_direto">
+                <input id="forma_direto" name="forma_pagamento" type="radio" value="direto" required>
+                <span class="radio-copy">
+                  <strong>Pagamento em sede</strong>
+                  <span>O vencimento é fixado no dia 5 de cada mês.</span>
+                </span>
+              </label>
+            </div>
+            <div id="payment-note" class="payment-note">
+              Para pagamentos em sede, o vencimento e o envio das cobranças (boleto e Pix) ocorrem sempre no dia 5 de cada mês.
+            </div>
+            <div class="contribution-note">
+              *O valor da contribuicao e 1% do valor bruto.
+            </div>
+          </section>
+
+          <section class="section-card" aria-labelledby="sec-contracheque">
+            <h3 id="sec-contracheque">Contracheque</h3>
+            <p>Envie um arquivo PDF, JPG ou PNG com até 5 MB. O envio e obrigatório apenas para quem optar por pagamento em sede.</p>
+            <div class="field">
+              <label for="contracheque">Arquivo do contracheque</label>
+              <input id="contracheque" name="contracheque" type="file" accept=".pdf,image/png,image/jpeg">
+              <span class="hint">O arquivo é salvo em bucket privado e não fica exposto por URL pública.</span>
+            </div>
+          </section>
+
+          <section class="section-card" aria-labelledby="sec-assinatura">
+            <h3 id="sec-assinatura">Assinatura digital</h3>
+            <p>Assine dentro da área abaixo. A imagem da assinatura será incorporada ao PDF da ficha.</p>
+            <div class="signature-wrap">
+              <canvas id="canvas-assinatura" height="220"></canvas>
+              <div class="signature-actions">
+                <span class="hint">Use o dedo no celular ou o mouse no computador.</span>
+                <button id="limpar-assinatura" class="button-secondary" type="button">Limpar assinatura</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-card" aria-labelledby="sec-termos">
+            <h3 id="sec-termos">Consentimento e declaração</h3>
+            <p>O aceite da política é obrigatório para registrar a solicitação.</p>
+            <div class="checkbox-stack">
+              <label class="checkbox-card" for="consentimento_lgpd">
+                <input id="consentimento_lgpd" name="consentimento_lgpd" type="checkbox" required>
+                <span>
+                  <p>Li e concordo com a <a href="./privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a> e autorizo o uso dos meus dados para fins de filiação sindical, conforme a LGPD.</p>
+                </span>
+              </label>
+              <label class="checkbox-card" for="declaracao_verdade">
+                <input id="declaracao_verdade" name="declaracao_verdade" type="checkbox" required>
+                <span>
+                  <p>Declaro que as informações prestadas são verdadeiras e reconheço que o pedido será analisado internamente antes da aprovação final.</p>
+                </span>
+              </label>
+            </div>
+          </section>
+
+          <div class="actions">
+            <p class="actions-note">Ao enviar, o sistema valida os campos obrigatórios, captura o IP do consentimento, gera o PDF da ficha e registra o pedido como <strong>pendente para análise</strong>.</p>
+            <div>
+              <div class="h-captcha" data-sitekey="18e4537e-9ef2-42c2-9226-b3703fa41f8e" style="margin-bottom: 12px;"></div>
+              <div class="button-row">
+                <button id="submit-button" class="button-primary" type="submit">Enviar filiação</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <section id="success-message" class="success-panel" aria-live="polite">
+          <div class="success-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          <h2>Solicitação enviada com sucesso!</h2>
+          <p>Sua solicitação de filiação foi recebida pelo SINTEENP-PB.</p>
+          <p id="protocolo-numero" style="font-weight: 700; font-size: 1.1rem; color: #2f2f35;"></p>
+          <p style="font-size: 0.95rem; color: var(--muted);">Seus dados estão protegidos conforme a Lei 13.709/2018 (LGPD)</p>
+          <div class="button-row">
+            <button class="button button-secondary" type="button" onclick="window.location.reload()">Voltar ao início</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand-wrap">
+        <div class="footer-brand-row">
+          <img src="./logo/logoSinteenp.jpeg" alt="Logo SINTEENP-PB" class="footer-logo-img">
+          <div>
+            <div class="footer-brand-name">SINTEENP-PB</div>
+            <div class="footer-brand-sub">sinteenp-pb.org.br</div>
+          </div>
+        </div>
+        <p class="footer-tagline">Sindicato dos Trabalhadores em Estabelecimentos de Ensino Privado da Paraíba</p>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Contato</p>
+        <ul class="footer-contact-list">
+          <li>
+            <span class="footer-contact-icon">📍</span>
+            <a href="https://maps.google.com/?q=Av.+Gen.+Osório,+109+Centro+João+Pessoa+PB" target="_blank" rel="noopener noreferrer">Av. General Osório, 109 - Centro, João Pessoa - PB, 58010-780</a>
+          </li>
+          <li>
+            <span class="footer-contact-icon">📞</span>
+            <a href="tel:+558332218935">(83)3221-8935</a>
+          </li>
+          <li>
+            <span class="footer-contact-icon">✉️</span>
+            <a href="mailto:sinteenppb@hotmail.com">sinteenppb@hotmail.com</a>
+          </li>
+          <li>
+            <span class="footer-contact-icon">📸</span>
+            <a href="https://instagram.com/sinteenppb" target="_blank" rel="noopener noreferrer">@sinteenppb</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Desenvolvimento</p>
+        <p class="footer-dev-label">Sistema desenvolvido por</p>
+        <a href="https://liftcode.com.br" class="footer-dev-link" target="_blank" rel="noopener noreferrer">
+          ⚡ Liftcode
+        </a>
+        <p class="footer-tagline" style="margin-top: 16px;">Plataforma de filiação digital com geração automática de ficha PDF e armazenamento privado dos arquivos.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 SINTEENP-PB. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/filiacao.js"></script>
+</body>
+</html>

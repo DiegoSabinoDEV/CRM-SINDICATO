@@ -1,0 +1,18 @@
+# Arquivos sensíveis — NUNCA commitar
+hostinger/js/supabase.js
+js/supabase.js
+local/n8n/workflow_notificacao.json
+n8n/
+
+# Sistema
+.DS_Store
+**/.DS_Store
+Thumbs.db
+node_modules/
+
+# Logs
+*.log
+
+# Env
+.env
+.env.local
