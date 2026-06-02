@@ -170,6 +170,22 @@ function validarCampos(dados) {
     throw new Error('Preencha o WhatsApp para continuar.')
   }
 
+  if (!dados.email) {
+    throw new Error('O e-mail é obrigatório.')
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(dados.email)) {
+    throw new Error('Digite um e-mail válido.')
+  }
+
+  if (!dados.empresa) {
+    throw new Error('O nome da empresa é obrigatório.')
+  }
+
+  if (!dados.cargo) {
+    throw new Error('O cargo é obrigatório.')
+  }
+
   if (!dados.forma_pagamento) {
     throw new Error('Selecione a forma de pagamento para continuar.')
   }
@@ -187,7 +203,7 @@ function validarCampos(dados) {
   }
 
   if (canvasVazio()) {
-    throw new Error('Assine o formulário para continuar.')
+    throw new Error('A assinatura digital é obrigatória.')
   }
 
   if (!dados.consentimento_lgpd) {
@@ -400,7 +416,7 @@ function mapearMensagemErro(error) {
     return mensagemOriginal
   }
 
-  if (mensagemOriginal === 'Assine o formulário para continuar.') {
+  if (mensagemOriginal === 'A assinatura digital é obrigatória.') {
     return mensagemOriginal
   }
 
@@ -535,4 +551,12 @@ function tiposContrachequeValidos() {
 async function dataUrlParaBlob(dataUrl) {
   const resposta = await fetch(dataUrl)
   return resposta.blob()
+}
+
+// Shrink topbar ao rolar
+const _topbar = document.querySelector('.topbar')
+if (_topbar) {
+  window.addEventListener('scroll', () => {
+    _topbar.classList.toggle('scrolled', window.scrollY > 60)
+  }, { passive: true })
 }
