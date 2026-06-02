@@ -1,4 +1,5 @@
-import { jsPDF, GState } from 'https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.es.min.js'
+// jsPDF carregado via <script> UMD no HTML — não usar import (ES build tem deps @babel/runtime)
+const { jsPDF, GState } = window.jspdf || {}
 
 const COR_VERMELHO    = [204, 0, 0]
 const COR_PRETO       = [26, 26, 26]
