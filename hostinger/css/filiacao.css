@@ -1053,30 +1053,40 @@ button:hover {
   }
 }
 
-/* Animação flutuante da logo */
-@keyframes flutuarLogo {
-  0%   { transform: translateY(0px); }
-  50%  { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
-}
-
+/* Hover flutuante da logo */
 .brand-mark img,
 .topbar .brand img {
   box-shadow: 0px 15px 25px -10px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
-  animation: flutuarLogo 4s ease-in-out infinite;
+  animation: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Pausar animação ao passar o mouse — boa prática UX */
+/* Flutuar apenas quando passar o mouse */
 .brand-mark img:hover,
 .topbar .brand img:hover {
-  animation-play-state: paused;
+  transform: translateY(-8px);
+  box-shadow: 0px 20px 30px -10px rgba(0, 0, 0, 0.5);
+  animation: none;
+}
+
+/* Hover nos botões do cabeçalho */
+.topbar-links a {
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease,
+              background-color 0.2s ease;
+}
+
+.topbar-links a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 16px -4px rgba(204, 0, 0, 0.5);
 }
 
 /* Respeitar preferência de movimento reduzido (acessibilidade) */
 @media (prefers-reduced-motion: reduce) {
-  .brand-mark img,
-  .topbar .brand img {
-    animation: none;
+  .brand-mark img:hover,
+  .topbar .brand img:hover,
+  .topbar-links a:hover {
+    transform: none;
   }
 }
