@@ -1052,3 +1052,31 @@ button:hover {
     animation: none !important;
   }
 }
+
+/* Animação flutuante da logo */
+@keyframes flutuarLogo {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.brand-mark img,
+.topbar .brand img {
+  box-shadow: 0px 15px 25px -10px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  animation: flutuarLogo 4s ease-in-out infinite;
+}
+
+/* Pausar animação ao passar o mouse — boa prática UX */
+.brand-mark img:hover,
+.topbar .brand img:hover {
+  animation-play-state: paused;
+}
+
+/* Respeitar preferência de movimento reduzido (acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  .brand-mark img,
+  .topbar .brand img {
+    animation: none;
+  }
+}
