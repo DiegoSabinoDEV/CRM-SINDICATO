@@ -78,7 +78,7 @@ function formatarDataHora(value) {
 export async function gerarPDF(dados = {}) {
   const [logoIcone, logoMarca] = await Promise.all([
     carregarLogoBase64('/logo/faviSinteenp.jpeg'),
-    carregarLogoBase64('/logo/logoSinteenp.jpeg')
+    carregarLogoBase64('/logo/logoSinteenp_transparente.png')
   ])
 
   const doc = new jsPDF({ unit: 'mm', format: 'a4' })
