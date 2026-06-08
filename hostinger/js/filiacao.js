@@ -116,6 +116,24 @@ form?.addEventListener('submit', async event => {
       origem: 'pagina_web'
     })
 
+    try {
+      await fetch('https://n8n.liftcode.com.br/webhook/pesquisa-sindicato', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          acao: 'nova_filiacao',
+          nome: dados.nome_completo,
+          whatsapp: dados.whatsapp,
+          email: dados.email || null,
+          empresa: dados.empresa || '',
+          cargo: dados.cargo || '',
+          sindicato: 'SINTEENP-PB',
+          admin_whatsapp: '5583993526345',
+          link_crm: 'https://portalsinteenp.org/admin/dashboard.html'
+        })
+      })
+    } catch {}
+
     exibirSucesso(uuid)
   } catch (error) {
     enviando = false
