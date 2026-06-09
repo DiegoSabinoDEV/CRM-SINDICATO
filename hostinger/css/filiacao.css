@@ -191,6 +191,19 @@ a {
   outline: none;
 }
 
+.btn-carteira {
+  background: transparent !important;
+  border: 2px solid #CC0000 !important;
+  color: #CC0000 !important;
+  transition: background 200ms ease, color 200ms ease !important;
+}
+
+.btn-carteira:hover,
+.btn-carteira:focus-visible {
+  background: #CC0000 !important;
+  color: #fff !important;
+}
+
 .hero-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
