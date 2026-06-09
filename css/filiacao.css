@@ -56,23 +56,27 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  background: #ffffff;
+  background: #2F2F2F;
   padding: 12px 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  border-bottom: 3px solid #CC0000;
-  color: var(--text);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.22);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: #f8fafc;
   transition: padding 0.3s ease, background 0.3s ease;
 }
 
 .topbar.scrolled {
   padding: 6px 24px;
-  background: rgba(255,255,255,0.97);
+  background: #2F2F2F;
   backdrop-filter: blur(8px);
 }
 
 .topbar.scrolled .brand-mark {
   width: 44px;
   height: 44px;
+}
+
+.topbar.scrolled .brand-mark img {
+  max-height: 44px;
 }
 
 .topbar.scrolled .brand-name {
@@ -104,8 +108,8 @@ a {
 }
 
 .brand-mark {
-  width: 72px;
-  height: 72px;
+  width: auto;
+  height: auto;
   padding: 0;
   border-radius: 0;
   display: inline-flex;
@@ -120,8 +124,9 @@ a {
 
 .brand-mark img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
+  max-height: 74px;
   object-fit: contain;
 }
 
@@ -133,7 +138,7 @@ a {
 .brand-copy > span:first-child {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #2f2f35;
+  color: #f8fafc;
   line-height: 1.1;
 }
 
@@ -168,7 +173,7 @@ a {
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 6px;
-  border: none;
+  border: 1px solid #CC0000;
   background: #CC0000;
   font-weight: 600;
   font-size: 0.9rem;

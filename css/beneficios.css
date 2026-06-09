@@ -36,7 +36,7 @@ a { color: inherit; }
   left: 0;
   right: 0;
   z-index: 100;
-  background: #1a1a1a;
+  background: #2F2F2F;
   padding: 0 16px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
 }
@@ -110,7 +110,7 @@ a { color: inherit; }
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 6px;
-  border: none;
+  border: 1px solid #CC0000;
   background: #CC0000;
   font-size: 0.9rem;
   font-weight: 600;
@@ -127,7 +127,7 @@ a { color: inherit; }
 
 .topbar-link.cta {
   background: #CC0000;
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -312,13 +312,6 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   gap: 12px;
-  transition: box-shadow 220ms ease, transform 220ms ease, border-color 220ms ease;
-}
-
-.benefit-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
-  border-color: rgba(var(--primary-rgb),.2);
 }
 
 .card-top {

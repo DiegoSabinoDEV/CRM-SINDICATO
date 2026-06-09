@@ -43,6 +43,11 @@ a {
   gap: 16px;
   color: #f8fafc;
   margin-bottom: 24px;
+  padding: 18px 20px;
+  border-radius: 24px;
+  background: #2F2F2F;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
 }
 
 .topbar a {
@@ -98,10 +103,15 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: #CC0000;
+  border: 1px solid #CC0000;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-height: 44px;
+  white-space: nowrap;
 }
 
 .card {
