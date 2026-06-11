@@ -108,6 +108,13 @@
             </select>
           </div>
         </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dataFiliacao">Data de Filiação <span class="required">*</span></label>
+            <input type="date" id="dataFiliacao" name="dataFiliacao" required>
+          </div>
+        </div>
       </div>
 
       <!-- Seção 2: Contato -->
@@ -262,6 +269,9 @@
     // Guard de autenticação
     await protegerRota(supabase)
 
+    // Pré-preencher Data de Filiação com hoje
+    document.getElementById('dataFiliacao').value = new Date().toISOString().split('T')[0]
+
     const formulario = document.getElementById('formulario-novo-socio')
     const alerta = document.getElementById('alerta')
     const spinner = document.getElementById('spinner')
@@ -302,6 +312,16 @@
         return
       }
 
+      const dataFiliacao = document.getElementById('dataFiliacao').value
+      if (!dataFiliacao) {
+        exibirAlerta(alerta, 'A data de filiação é obrigatória.', 'error')
+        return
+      }
+      if (dataFiliacao > new Date().toISOString().split('T')[0]) {
+        alert('A data de filiação não pode ser futura.')
+        return
+      }
+
       // Desabilitar botão
       const btnSubmit = formulario.querySelector('button[type="submit"]')
       btnSubmit.disabled = true
@@ -334,6 +354,7 @@
           forma_pagamento: document.getElementById('forma-pagamento').value,
           valor_mensalidade: document.getElementById('valor-mensalidade').value ? 
             parseFloat(document.getElementById('valor-mensalidade').value) : null,
+          data_filiacao: dataFiliacao,
           status: 'pendente',
           origem: 'manual',
           consentimento_lgpd: true,

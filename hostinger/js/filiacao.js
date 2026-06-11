@@ -113,7 +113,8 @@ form?.addEventListener('submit', async event => {
       consentimento_lgpd: true,
       data_consentimento_lgpd: dataConsentimento,
       ip_consentimento: ip,
-      origem: 'pagina_web'
+      origem: 'pagina_web',
+      data_filiacao: new Date().toISOString().split('T')[0]
     })
 
     try {

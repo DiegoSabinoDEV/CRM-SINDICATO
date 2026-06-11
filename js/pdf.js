@@ -63,6 +63,11 @@ function valor(value, fallback = '-') {
 
 function formatarData(value) {
   if (!value) return '-'
+  const soData = String(value).split('T')[0]
+  if (/^\d{4}-\d{2}-\d{2}$/.test(soData)) {
+    const [ano, mes, dia] = soData.split('-')
+    return `${dia}/${mes}/${ano}`
+  }
   const data = value instanceof Date ? value : new Date(value)
   if (Number.isNaN(data.getTime())) return '-'
   return new Intl.DateTimeFormat('pt-BR').format(data)
@@ -224,6 +229,7 @@ export async function gerarPDF(dados = {}) {
 
   // ── SEÇÃO 5: PAGAMENTO ────────────────────────────────────────────────────
   iniciarSecao('5. PAGAMENTO')
+  escreverCampoSimples('Data de Filiacao', formatarData(dados.data_filiacao))
   const folha  = dados.forma_pagamento === 'folha'  ? '[X]' : '[ ]'
   const direto = dados.forma_pagamento === 'direto' ? '[X]' : '[ ]'
   escreverCampoSimples('Forma', `${folha} Desconto em folha   ${direto} Pagamento em sede`)

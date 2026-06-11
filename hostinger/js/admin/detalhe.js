@@ -69,7 +69,7 @@ export async function aprovarSocio(supabase, id, emailAdmin, socio = null) {
 
     if (error) throw error
 
-    if (socio) {
+    if (socio && socio.origem !== 'manual') {
       await notificarSocio(socio, 'aprovado')
     }
   } catch (error) {
@@ -103,7 +103,7 @@ export async function recusarSocio(supabase, id, motivo, emailAdmin, socio = nul
 
     if (error) throw error
 
-    if (socio) {
+    if (socio && socio.origem !== 'manual') {
       await notificarSocio(socio, 'recusado', motivo.trim())
     }
   } catch (error) {
