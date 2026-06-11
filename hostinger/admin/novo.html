@@ -267,7 +267,8 @@
     import { cadastrarSocio, validarFormulario, buscarCEP } from '../js/admin/novo.js'
 
     // Guard de autenticação
-    await protegerRota(supabase)
+    const session = await protegerRota(supabase)
+    const emailAdmin = session.user.email
 
     // Pré-preencher Data de Filiação com hoje
     document.getElementById('dataFiliacao').value = new Date().toISOString().split('T')[0]
@@ -355,8 +356,10 @@
           valor_mensalidade: document.getElementById('valor-mensalidade').value ? 
             parseFloat(document.getElementById('valor-mensalidade').value) : null,
           data_filiacao: dataFiliacao,
-          status: 'pendente',
+          status: 'aprovado',
           origem: 'manual',
+          aprovado_por: emailAdmin,
+          aprovado_em: new Date().toISOString(),
           consentimento_lgpd: true,
           data_consentimento_lgpd: new Date().toISOString(),
           ip_consentimento: 'manual'

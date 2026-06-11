@@ -325,7 +325,7 @@ export async function carregarPagamentos(supabase, socioId) {
  * @param {string} mesReferencia - Mês (YYYY-MM)
  * @param {number} valor - Valor do pagamento
  */
-export async function registrarPagamento(supabase, socioId, mesReferencia, valor, forma, registradoPor) {
+export async function registrarPagamento(supabase, socioId, mesReferencia, valor, forma, registradoPor, dataPagamento) {
   try {
     if (!mesReferencia || !mesReferencia.match(/^\d{4}-\d{2}$/)) {
       throw new Error('Mês de referência inválido (deve ser YYYY-MM)')
@@ -339,7 +339,7 @@ export async function registrarPagamento(supabase, socioId, mesReferencia, valor
       socio_id: socioId,
       mes_referencia: mesReferencia,
       valor: parseFloat(valor),
-      data_pagamento: new Date().toISOString().split('T')[0],
+      data_pagamento: dataPagamento || new Date().toISOString().split('T')[0],
       forma: forma || null,
       registrado_por: registradoPor || null
     }

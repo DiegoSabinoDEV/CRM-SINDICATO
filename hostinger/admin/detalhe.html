@@ -174,7 +174,7 @@
         </div>
         <div style="padding-top: 16px; border-top: 1px solid var(--border); margin-top: 16px;">
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px;">
-            <input type="month" id="input-mes-pagamento" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px;">
+            <input type="date" id="input-data-pagamento" title="Data de Pagamento" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px;">
             <input type="number" id="input-valor-pagamento" placeholder="Valor (R$)" step="0.01" min="0" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px;">
             <select id="input-forma-pagamento" style="padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; background: white;">
               <option value="">Forma</option>
@@ -321,8 +321,9 @@
     const btnModalCancelar = document.getElementById('btn-modal-cancelar')
     const btnModalConfirmar = document.getElementById('btn-modal-confirmar')
     const tabelaPagamentos = document.getElementById('tabela-pagamentos')
-    const inputMesPagamento = document.getElementById('input-mes-pagamento')
+    const inputDataPagamento = document.getElementById('input-data-pagamento')
     const inputValorPagamento = document.getElementById('input-valor-pagamento')
+    inputDataPagamento.value = new Date().toISOString().split('T')[0]
     const inputFormaPagamento = document.getElementById('input-forma-pagamento')
     const btnRegistrarPagamento = document.getElementById('btn-registrar-pagamento')
     const badgeAdimplencia = document.getElementById('badge-adimplencia')
@@ -529,12 +530,13 @@
 
     // Registrar pagamento
     btnRegistrarPagamento.addEventListener('click', async () => {
-      const mes = inputMesPagamento.value
+      const dataPag = inputDataPagamento.value
+      const mes = dataPag ? dataPag.substring(0, 7) : ''
       const valor = parseFloat(inputValorPagamento.value)
       const forma = inputFormaPagamento.value || null
 
-      if (!mes) {
-        exibirAlerta(alerta, 'Selecione o mês de referência', 'error')
+      if (!dataPag) {
+        exibirAlerta(alerta, 'Informe a data do pagamento', 'error')
         return
       }
 
@@ -545,9 +547,9 @@
 
       try {
         btnRegistrarPagamento.disabled = true
-        await registrarPagamento(supabase, socioId, mes, valor, forma, session.user.email)
+        await registrarPagamento(supabase, socioId, mes, valor, forma, session.user.email, dataPag)
         exibirAlerta(alerta, 'Pagamento registrado com sucesso!', 'success')
-        inputMesPagamento.value = ''
+        inputDataPagamento.value = new Date().toISOString().split('T')[0]
         inputValorPagamento.value = ''
         inputFormaPagamento.value = ''
 
